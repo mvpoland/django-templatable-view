@@ -20,7 +20,7 @@ you can write:
 
 
 When the templatable_view decorator detects that a normal HttpResponse object
-has been return, it won't touch it and pass it to the Django middleware.
+has been returned, it won't touch it and pass it to the Django middleware.
 
 
 Some other examples
