@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name = "django-templatable-view",
-    version = "0.1",
+    version = "1.1.1",
     url = 'https://github.com/citylive/django-templatable-view',
     license = 'BSD',
     description = "Decorator which takes care of rendering the response in Django views.",
