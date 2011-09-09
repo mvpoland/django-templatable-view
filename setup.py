@@ -1,8 +1,9 @@
 from setuptools import setup, find_packages
+import templatable_view
 
 setup(
     name = "django-templatable-view",
-    version = "1.1.1",
+    version = templatable.__version__,
     url = 'https://github.com/citylive/django-templatable-view',
     license = 'BSD',
     description = "Decorator which takes care of rendering the response in Django views.",
