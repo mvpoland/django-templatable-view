@@ -1,10 +1,7 @@
 # -*- coding: utf-8 -*-
-__version__ = '1.2.0'
 
 from django.http import HttpResponse
-from django.conf import settings
-from django.shortcuts import render_to_response
-from django.template import loader, TemplateDoesNotExist
+from django.template import loader
 from django.template import RequestContext
 from functools import wraps
 
