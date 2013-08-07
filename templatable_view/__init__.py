@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+__version__ = '1.2.0'
 
 from django.http import HttpResponse
 from django.conf import settings
@@ -30,20 +31,22 @@ def register_template(path, view_func=None):
 def templatable_view(default_template_name, default_context=None, render_func=False):
     """
     Creates a decorator which
-    - Extracts the `context` and `template_name` params from the view.
-    - Call the view without those parameters
-    - Render the template. Use the default template if none was passed to the view.
+     - Extracts the `context` and `template_name` params from the view.
+     - Call the view without those parameters
+     - Render the template. Use the default template if none was passed to the view.
 
     The `render_func` parameter is optional and can be used to customize the rendering procedure.
     it should look like:
 
-    >    def render_func(request, template_name, context):
-    >        pass
+    ::
+
+        def render_func(request, template_name, context):
+            pass
 
     The decorated view should return either:
-    - a context dictionary; or
-    - a tuple (template_name, context dictionary); or
-    - a HttpResponse
+     - a context dictionary; or
+     - a tuple (template_name, context dictionary); or
+     - a HttpResponse
     """
     # Create decorator
     def decorator(view_func):
