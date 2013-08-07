@@ -31,7 +31,7 @@ setup(
     long_description = open('README.rst','r').read(),
     author = 'Jonathan Slenders, City Live nv',
     packages = find_packages('templatable_view'),
-    package_dir = {'': 'templatable_view'},
+    #package_dir = {'': 'templatable_view'},
     classifiers = [
         'Programming Language :: Python',
         'Operating System :: OS Independent',
