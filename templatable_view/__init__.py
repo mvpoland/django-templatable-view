@@ -7,7 +7,7 @@ from functools import wraps
 
 # Remember which templates are actually in use.
 __registered_templates = set()  # list of template names
-__registered_templates_views = { } # mapping from template name to list of views.
+__registered_templates_views = {} # mapping from template name to list of views.
 
 
 def register_template(path, view_func=None):
@@ -22,7 +22,7 @@ def register_template(path, view_func=None):
         if path in __registered_templates_views:
             __registered_templates_views[path].append(view_func)
         else:
-            __registered_templates_views[path] = [ view_func ]
+            __registered_templates_views[path] = [view_func]
 
 
 def templatable_view(default_template_name, default_context=None, render_func=False):
@@ -62,7 +62,7 @@ def templatable_view(default_template_name, default_context=None, render_func=Fa
             context = default_context or {}
 
             # Pop decorator parameters
-            context.update(kwargs.pop('context', { }))
+            context.update(kwargs.pop('context', {}))
             template_name = kwargs.pop('template_name', default_template_name)
 
             # Call original view function
@@ -72,7 +72,7 @@ def templatable_view(default_template_name, default_context=None, render_func=Fa
                 context_instance = RequestContext(request)
                 context_instance.update(context)
                 result = loader.get_template(template_name).render(context_instance)
-                return HttpResponse(result, mimetype="text/html")
+                return HttpResponse(result)
             render = render_func or _render_func
 
             if isinstance(view_result, dict):
